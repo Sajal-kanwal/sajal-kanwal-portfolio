@@ -2,7 +2,7 @@
 
 A stunning 3D personal portfolio website built with React, Three.js, and GSAP.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://your-domain.com)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)]([https://your-domain.com](https://sajal-kanwal.vercel.app/))
 
 ![Portfolio Preview](./public/images/Preview.png)
 
@@ -47,11 +47,11 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Sajal-kanwal/sajal-kanwal-portfolio.git
     ```
 2.  Navigate to the project directory
     ```sh
-    cd your-repo-name
+    cd sajal-kanwal-portfolio
     ```
 3.  Install NPM packages
     ```sh
