@@ -2,7 +2,7 @@
 
 A stunning 3D personal portfolio website built with React, Three.js, and GSAP.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)]([https://your-domain.com](https://sajal-kanwal.vercel.app/))
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://sajal-kanwal.vercel.app/)
 
 ![Portfolio Preview](./public/images/Preview.png)
 
