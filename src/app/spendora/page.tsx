@@ -10,28 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function SpendoraPage() {
-  const images = [
-    '/images/lightsofseoul/lightofseoul_thumbnail_520h.jpg',
-    '/images/lightsofseoul/Lights_of_Seoul_Banner01.jpg',
-    '/images/lightsofseoul/Lights_of_Seoul_Banner02.jpg',
-    '/images/lightsofseoul/Flag01.jpg',
-    '/images/lightsofseoul/Flag02.jpg',
-    '/images/lightsofseoul/ID01.jpg',
-    '/images/lightsofseoul/ID02.jpg',
-    '/images/lightsofseoul/Tickets01_ASetof3.jpg',
-    '/images/lightsofseoul/Digital_Ticket01.jpg',
-    '/images/lightsofseoul/Digital_Laptop01.jpg',
-    '/images/lightsofseoul/Digital_MobilePhone.jpg',
-    '/images/lightsofseoul/Wayfinding01.jpg',
-    '/images/lightsofseoul/Wayfinding02.jpg',
-    '/images/lightsofseoul/Wayfinding03.jpg',
-    '/images/lightsofseoul/Wayfinding04.jpg',
-    '/images/lightsofseoul/Lights_of_Seoul_Truck01.jpg',
-    '/images/lightsofseoul/PaperBag01.jpg',
-    '/images/lightsofseoul/ToteBag01.jpg',
-    '/images/lightsofseoul/Revision_Mockups03.jpg',
-    '/images/lightsofseoul/Revision_Mockups04.jpg',
-  ];
+  const images = [];
 
   return (
     <section className="about-section" style={{ paddingTop: '80px' }}>
@@ -66,19 +45,85 @@ export default function SpendoraPage() {
           </div>
         </RevealOnScroll>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {images.map((img, i) => (
-            <RevealOnScroll key={i}>
-              <img src={img} alt={`Lights of Seoul ${i + 1}`} loading="lazy" style={{ width: '100%', borderRadius: '8px' }} />
-            </RevealOnScroll>
-          ))}
+        <div className="my-24 md:my-32">
+          <RevealOnScroll>
+            <div className="mb-24 md:mb-32">
+              <h2 className="text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] mb-8 font-medium">The Vision</h2>
+              <h3 className="text-[clamp(28px,4vw,48px)] font-light leading-[1.2] text-[var(--text)] tracking-tight max-w-4xl">
+                Illuminating financial habits with <br className="hidden md:block"/>
+                <span className="text-[var(--text-secondary)]">real-time predictive telemetry.</span>
+              </h3>
+              <p className="mt-8 text-[16px] md:text-[18px] leading-[1.8] text-[var(--text-secondary)] max-w-2xl">
+                Spendora is a Real-Time Financial Telemetry Dashboard providing unparalleled visibility into personal and enterprise spending behaviors. Moving beyond static budgets, Spendora uses machine learning to categorize transactions, forecast future cash flows, and alert users to anomalous patterns instantly.
+              </p>
+            </div>
+          </RevealOnScroll>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 pt-16 border-t border-[var(--border)] mb-24 md:mb-32">
+            <div className="md:col-span-4">
+              <RevealOnScroll>
+                <h4 className="text-[13px] uppercase tracking-[0.2em] text-[var(--text)] font-medium">Core Capabilities</h4>
+              </RevealOnScroll>
+            </div>
+            <div className="md:col-span-8">
+              <ul className="space-y-16">
+                <RevealOnScroll>
+                  <li className="group">
+                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Algorithmic Categorization</h5>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
+                      Automatically sorts inbound and outbound transactions with 98% programmatic accuracy using historical bank data and ML clustering.
+                    </p>
+                  </li>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <li className="group">
+                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Predictive Forecasting</h5>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
+                      Projects end-of-month balances and cash flow trajectories by factoring in recurring subscriptions and historical burn rates.
+                    </p>
+                  </li>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <li className="group">
+                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Interactive Visualizations</h5>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
+                      Clean, highly responsive metric charts enabling fluid deep-dives into spending behaviors across custom dimensions and timeframes.
+                    </p>
+                  </li>
+                </RevealOnScroll>
+              </ul>
+            </div>
+          </div>
 
-          <RevealOnScroll>
-            <video src="/videos/lightsofseoul_visualdirection01.mp4" autoPlay muted loop playsInline style={{ width: '100%', borderRadius: '8px' }} />
-          </RevealOnScroll>
-          <RevealOnScroll>
-            <video src="/videos/lightsofseoul_wayfinding01.mp4" autoPlay muted loop playsInline style={{ width: '100%', borderRadius: '8px' }} />
-          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 pt-16 border-t border-[var(--border)]">
+            <div className="md:col-span-4">
+              <RevealOnScroll>
+                <h4 className="text-[13px] uppercase tracking-[0.2em] text-[var(--text)] font-medium">Architecture</h4>
+              </RevealOnScroll>
+            </div>
+            <div className="md:col-span-8">
+              <RevealOnScroll>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-10 gap-x-8">
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">Next.js</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Reactive UI</span>
+                  </div>
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">PostgreSQL</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Data Core</span>
+                  </div>
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">Prisma</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Safe ORM</span>
+                  </div>
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">Clerk</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Auth Provider</span>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            </div>
+          </div>
         </div>
 
         <GoTopButton />

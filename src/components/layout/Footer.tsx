@@ -55,13 +55,13 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a className="ft-credit-connectBox-each" href={SOCIAL_LINKS.behance} target="_blank" data-text="Behance">
-                    <i className="ri-behance-fill" />
+                  <a className="ft-credit-connectBox-each" href={SOCIAL_LINKS.github} target="_blank" data-text="GitHub">
+                    <i className="ri-github-fill" />
                   </a>
                 </li>
                 <li>
                   <a className="ft-credit-connectBox-each" href={SOCIAL_LINKS.instagram} target="_blank" data-text="Instagram">
-                    <i className="ri-instagram-fill" />
+                    <i className="ri-instagram-line" />
                   </a>
                 </li>
                 <li>

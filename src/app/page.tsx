@@ -48,9 +48,14 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
             </div>
           </div>
 
-          {/* Sharp thumbnail card */}
-          <div className="cs-fullpage-thumb">
-            <Image src={cs.hoverImage} alt={cs.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 45vw" />
+          {/* Sharp thumbnail container */}
+          <div className="cs-fullpage-thumb-container">
+            <div className="cs-fullpage-thumb-base">
+              <Image src={cs.baseImage} alt={cs.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 45vw" />
+            </div>
+            <div className="cs-fullpage-thumb-hover">
+              <Image src={cs.hoverImage} alt={cs.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 45vw" />
+            </div>
           </div>
         </div>
       </Link>
@@ -141,8 +146,12 @@ export default function HomePage() {
                         <span>LinkedIn</span>
                         <i className="ri-arrow-right-line" />
                       </a>
-                      <a href={SOCIAL_LINKS.behance} target="_blank" className="social-pill hover-trigger" data-text="Behance">
-                        <span>Behance</span>
+                      <a href={SOCIAL_LINKS.github} target="_blank" className="social-pill hover-trigger" data-text="GitHub">
+                        <span>GitHub</span>
+                        <i className="ri-arrow-right-line" />
+                      </a>
+                      <a href={SOCIAL_LINKS.instagram} target="_blank" className="social-pill hover-trigger" data-text="Instagram">
+                        <span>Instagram</span>
                         <i className="ri-arrow-right-line" />
                       </a>
                       <a href={SOCIAL_LINKS.email} className="social-pill hover-trigger" data-text="Email">
@@ -202,6 +211,16 @@ export default function HomePage() {
                               </div>
                             </span>
                           </div>
+                          {exp.bullets && (
+                            <ul className="mt-6 space-y-3 opacity80">
+                              {exp.bullets.map((b, idx) => (
+                                <li key={idx} className="text-[14px] leading-relaxed flex items-start gap-3">
+                                  <span className="text-[var(--text-secondary)] mt-1">•</span>
+                                  <span className="text-[var(--text)]">{b}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </li>
                       ))}
                     </ul>

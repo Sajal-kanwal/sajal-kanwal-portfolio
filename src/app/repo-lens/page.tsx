@@ -10,25 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function RepoLensPage() {
-  const images = [
-    '/images/thefavricexpo/thefabricexpo-logo-main.jpg',
-    '/images/thefavricexpo/thefabricexpo-logo-green.jpg',
-    '/images/thefavricexpo/thefabricexpo-logo-white.jpg',
-    '/images/thefavricexpo/thefabricexpo-logo-clearspace.jpg',
-    '/images/thefavricexpo/thefabricexpo-binder01.jpg',
-    '/images/thefavricexpo/thefabricexpo-binder02.jpg',
-    '/images/thefavricexpo/thefabricexpo-binder03.jpg',
-    '/images/thefavricexpo/thefabricexpo-billboard01.jpg',
-    '/images/thefavricexpo/thefabricexpo-billboard02.jpg',
-    '/images/thefavricexpo/thefabricexpo-billboard03.jpg',
-    '/images/thefavricexpo/thefabricexpo-posters01.jpg',
-    '/images/thefavricexpo/thefabricexpo-totebag01.jpg',
-    '/images/thefavricexpo/thefabricexpo-paperbag01.jpg',
-    '/images/thefavricexpo/thefabricexpo-cap01.jpg',
-    '/images/thefavricexpo/thefabricexpo-phone01.jpg',
-    '/images/thefavricexpo/thefabricexpo-website01.jpg',
-    '/images/thefavricexpo/thefabricexpo-misc01.jpg',
-  ];
+  const images = [];
 
   return (
     <section className="about-section" style={{ paddingTop: '80px' }}>
@@ -63,12 +45,85 @@ export default function RepoLensPage() {
           </div>
         </RevealOnScroll>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {images.map((img, i) => (
-            <RevealOnScroll key={i}>
-              <img src={img} alt={`The Favric Expo ${i + 1}`} loading="lazy" style={{ width: '100%', borderRadius: '8px' }} />
-            </RevealOnScroll>
-          ))}
+        <div className="my-24 md:my-32">
+          <RevealOnScroll>
+            <div className="mb-24 md:mb-32">
+              <h2 className="text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] mb-8 font-medium">The Vision</h2>
+              <h3 className="text-[clamp(28px,4vw,48px)] font-light leading-[1.2] text-[var(--text)] tracking-tight max-w-4xl">
+                Democratizing codebase context with <br className="hidden md:block"/>
+                <span className="text-[var(--text-secondary)]">AI-powered semantic search.</span>
+              </h3>
+              <p className="mt-8 text-[16px] md:text-[18px] leading-[1.8] text-[var(--text-secondary)] max-w-2xl">
+                Repo Lens is a GitHub collaboration SaaS designed to accelerate codebase understanding for distributed engineering teams. By ingesting public and private repositories, it builds a semantic understanding of architectural patterns, allowing developers to query their entire codebase using natural language.
+              </p>
+            </div>
+          </RevealOnScroll>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 pt-16 border-t border-[var(--border)] mb-24 md:mb-32">
+            <div className="md:col-span-4">
+              <RevealOnScroll>
+                <h4 className="text-[13px] uppercase tracking-[0.2em] text-[var(--text)] font-medium">Core Capabilities</h4>
+              </RevealOnScroll>
+            </div>
+            <div className="md:col-span-8">
+              <ul className="space-y-16">
+                <RevealOnScroll>
+                  <li className="group">
+                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Natural Language Queries</h5>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
+                      Instantly locate logical components without complex regex or keyword searches, bringing intuition back to codebase navigation.
+                    </p>
+                  </li>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <li className="group">
+                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Automated Documentation</h5>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
+                      Generates dynamic, up-to-date READMEs and architectural overviews based on real-time structural analysis of your repositories.
+                    </p>
+                  </li>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <li className="group">
+                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Intelligent PR Analysis</h5>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
+                      Automatically reviews pull requests for architectural compliance, potential bugs, and stylistic violations before they land in production.
+                    </p>
+                  </li>
+                </RevealOnScroll>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 pt-16 border-t border-[var(--border)]">
+            <div className="md:col-span-4">
+              <RevealOnScroll>
+                <h4 className="text-[13px] uppercase tracking-[0.2em] text-[var(--text)] font-medium">Architecture</h4>
+              </RevealOnScroll>
+            </div>
+            <div className="md:col-span-8">
+              <RevealOnScroll>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-10 gap-x-8">
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">Next.js 15</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Frontend Engine</span>
+                  </div>
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">LangChain</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">LLM Orchestrator</span>
+                  </div>
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">pgvector</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Vector Memory</span>
+                  </div>
+                  <div>
+                    <span className="block text-[clamp(20px,2vw,24px)] font-light text-[var(--text)] mb-2">tRPC</span>
+                    <span className="text-[11px] text-[var(--text-secondary)] uppercase tracking-[0.1em]">Safe Transports</span>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            </div>
+          </div>
         </div>
 
         <GoTopButton />

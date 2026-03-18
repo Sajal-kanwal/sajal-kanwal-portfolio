@@ -51,12 +51,12 @@ export default function ContactPage() {
               <a href={SOCIAL_LINKS.linkedin} target="_blank" data-text="Follow Me!">@seunghyeon</a>
             </li>
             <li>
-              <h4>Behance</h4>
-              <a href={SOCIAL_LINKS.behance} target="_blank" data-text="Follow Me!">@sydneyyeom</a>
+              <h4>GitHub</h4>
+              <a href={SOCIAL_LINKS.github} target="_blank" data-text="Follow Me!">@Sajal-kanwal</a>
             </li>
             <li>
               <h4>Instagram</h4>
-              <a href={SOCIAL_LINKS.instagram} target="_blank" data-text="Follow Me!">@theissue.xyz</a>
+              <a href={SOCIAL_LINKS.instagram} target="_blank" data-text="Follow Me!">@anytng.sajal</a>
             </li>
           </ul>
 

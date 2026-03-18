@@ -45,4 +45,5 @@ export interface ExperienceEntry {
   company: string;
   location: string;
   logoSrc: string;
+  bullets?: string[];
 }

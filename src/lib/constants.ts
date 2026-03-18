@@ -27,6 +27,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'spendora',
     baseImage: '/images/lightsofseoul/lightsofseoul_thumbnail_square.jpg',
     hoverImage: '/images/lightsofseoul/Digital_Ticket01-square.jpg',
+  },
+  {
+    number: 'Casestudy 04',
+    title: 'Vantage',
+    subtitle: 'Supply Chain Intelligence Pipeline',
+    tasks: ['Python', 'MySQL', 'SQLAlchemy', 'Pandas'],
+    slug: 'vantage',
+    baseImage: '/images/iwasntthere/2025Dec_FirstBooklet_Page01.jpg',
+    hoverImage: '/images/lightsofseoul/PaperBag01.jpg',
   }
 ];
 
@@ -39,7 +48,8 @@ export const SEARCH_ITEMS: SearchItem[] = [
   { label: 'Contact', keywords: ['contact', 'co', 'con'], url: '/contact' },
   { label: 'Repo Lens', keywords: ['repo', 'lens', 'github', 'saas', 'ai'], url: '/repo-lens' },
   { label: 'Sentinel', keywords: ['sentinel', 'autonomous', 'news', 'agent'], url: '/sentinel' },
-  { label: 'Spendora', keywords: ['spendora', 'finance', 'telemetry', 'dashboard'], url: '/spendora' }
+  { label: 'Spendora', keywords: ['spendora', 'finance', 'telemetry', 'dashboard'], url: '/spendora' },
+  { label: 'Vantage', keywords: ['vantage', 'supply', 'chain', 'elt', 'pipeline'], url: '/vantage' }
 ];
 
 export const FUN_RESPONSES: FunResponse[] = [
@@ -87,6 +97,14 @@ export const FUN_RESPONSES: FunResponse[] = [
 
 export const EXPERIENCES: ExperienceEntry[] = [
   {
+    title: 'Top 10 - AWS College Hackathon',
+    type: 'Hackathon',
+    dates: '2025 Jan',
+    company: 'Hack The Future',
+    location: 'Remote',
+    logoSrc: '/images/profile/man.png',
+  },
+  {
     title: 'Top 50 - Hack the Future',
     type: 'Hackathon',
     dates: '2025 Apr',
@@ -106,9 +124,8 @@ export const EXPERIENCES: ExperienceEntry[] = [
 
 export const SOCIAL_LINKS = {
   linkedin: 'https://linkedin.com/in/sajal-kanwal',
-  behance: 'https://github.com/Sajal-kanwal',
-  instagram: 'https://github.com/Sajal-kanwal',
   github: 'https://github.com/Sajal-kanwal',
+  instagram: 'https://www.instagram.com/anytng.sajal',
   email: 'mailto:sajal.kanwal02@gmail.com',
   calendly: 'mailto:sajal.kanwal02@gmail.com',
 };

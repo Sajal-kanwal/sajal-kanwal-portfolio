@@ -770,7 +770,7 @@ img {
 }
 
 /* Right thumbnail card */
-.cs-fullpage-thumb {
+.cs-fullpage-thumb-container {
   position: relative;
   width: 45%;
   max-width: 520px;
@@ -781,17 +781,46 @@ img {
   flex-shrink: 0;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               box-shadow 0.6s ease;
+  z-index: 10;
 }
 
-.cs-fullpage-slide:hover .cs-fullpage-thumb {
+.cs-fullpage-slide:hover .cs-fullpage-thumb-container {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
 }
 
-.cs-fullpage-thumb img {
+@media (max-width: 768px) {
+  .cs-fullpage-thumb-container {
+    width: 65vw;
+  }
+}
+
+.cs-fullpage-thumb-base, .cs-fullpage-thumb-hover {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-fullpage-thumb-base {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}
+
+.cs-fullpage-thumb-hover {
+  clip-path: inset(100% 0 0 0); /* Reveal from bottom */
+  transform: scale(1.05); /* Slight zoom out effect as it reveals */
+}
+
+.cs-fullpage-link:hover .cs-fullpage-thumb-base {
+  clip-path: inset(0 0 100% 0);
+  transform: scale(0.95);
+}
+
+.cs-fullpage-link:hover .cs-fullpage-thumb-hover {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
 }
 
 
@@ -1930,3 +1959,137 @@ img {
     width: 100%;
   }
 }
+
+/* ================== SEARCH MODAL ================== */
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  width: 60px;
+  font-size: 14px;
+  pointer-events: none;
+}
+.search-key {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.search-key span {
+  background: var(--border);
+  color: var(--text);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.search-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.search-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-modal-wrapper {
+  background: var(--surface);
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text);
+}
+.search-modal.active .search-modal-wrapper {
+  transform: translateY(0);
+}
+
+.search-intro h3 {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.search-preview-text {
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 16px;
+  min-height: 80px;
+}
+.search-preview .typed {
+  color: var(--text);
+}
+.search-preview .silhouette {
+  color: var(--border);
+}
+.preview-hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+.preview-hint.highlighted, .preview-hint:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.search-default {
+  margin-top: 32px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+.search-default h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.search-default ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+.search-default li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.search-default span {
+  background: var(--surface);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 11px;
+}
+/* ================== END SEARCH MODAL ================== */
