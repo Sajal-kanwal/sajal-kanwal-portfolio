@@ -6,7 +6,7 @@ import Image from 'next/image';
 import RevealOnScroll from '@/components/shared/RevealOnScroll';
 import Footer from '@/components/layout/Footer';
 import GoTopButton from '@/components/layout/GoTopButton';
-import { CASE_STUDIES, ARCHIVE_ITEMS, EXPERIENCES, SOCIAL_LINKS } from '@/lib/constants';
+import { CASE_STUDIES, EXPERIENCES, SOCIAL_LINKS } from '@/lib/constants';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -59,113 +59,10 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
 }
 
 /* ============================
-   ARCHIVE ITEM
-============================ */
-function ArchiveListItem({ item, onClick }: { item: typeof ARCHIVE_ITEMS[0]; onClick: () => void }) {
-  return (
-    <RevealOnScroll>
-      <li className="casestudy-each-list hover-trigger" data-text="View Work" onClick={onClick}>
-        <div className="hero-more-projects-thumbnails">
-          <div className="hero-more-projects-thumbnails-title">
-            <h3>{item.title}</h3>
-            <i className="ri-arrow-right-line" />
-          </div>
-          <div className="hero-more-projects-img">
-            {item.images.slice(0, 1).map((img, i) => (
-              <img key={i} src={img} alt={item.title} loading="lazy" />
-            ))}
-          </div>
-        </div>
-        <div className="hero-more-projects-text-details">
-          <div className="hero-extra-works-text">
-            <h4>{item.category}</h4>
-            <h4>{item.year}</h4>
-          </div>
-        </div>
-      </li>
-    </RevealOnScroll>
-  );
-}
-
-/* ============================
-   ARCHIVE DETAIL
-============================ */
-function ArchiveDetail({ item, onBack }: { item: typeof ARCHIVE_ITEMS[0]; onBack: () => void }) {
-  return (
-    <div className="casestudy-container-archive">
-      <div className="archive-details">
-        <div className="archive-details-wrapper">
-          <RevealOnScroll>
-            <div className="archive-details-top">
-              <h3>{item.title}</h3>
-              <h4>{item.category}</h4>
-              <h5>{item.date}</h5>
-            </div>
-          </RevealOnScroll>
-
-          <RevealOnScroll>
-            <div className="archive-details-bottom">
-              <div className="archive-details-bottom-roles">
-                <h5>TASKS</h5>
-                <ul>
-                  {item.tasks.map(t => <li key={t}>{t}</li>)}
-                </ul>
-              </div>
-
-              {item.behanceUrl && (
-                <div className="btn-wrapper hover-trigger" style={{ marginTop: '16px' }}>
-                  <a href={item.behanceUrl} target="_blank" data-text="View Behance">
-                    <h4>Behance</h4>
-                    <i className="ri-arrow-right-line" />
-                  </a>
-                </div>
-              )}
-              {item.websiteUrl && (
-                <div className="btn-wrapper hover-trigger" style={{ marginTop: '16px' }}>
-                  <a href={item.websiteUrl} target="_blank" data-text="View Website">
-                    <h4>Website</h4>
-                    <i className="ri-arrow-right-line" />
-                  </a>
-                </div>
-              )}
-            </div>
-          </RevealOnScroll>
-        </div>
-      </div>
-
-      <div className="archive-details-imgs">
-        <ul className="archive-details-imgs-wrapper">
-          {item.images.map((img, i) => (
-            <li key={i}><img src={img} alt={`${item.title} ${i + 1}`} loading="lazy" /></li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-/* ============================
    HOMEPAGE
 ============================ */
 export default function HomePage() {
-  const [archiveView, setArchiveView] = useState<'list' | 'gallery'>('list');
-  const [activeArchive, setActiveArchive] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const archiveSectionRef = useRef<HTMLDivElement>(null);
-
-  const openArchive = useCallback((id: string) => {
-    setActiveArchive(id);
-    setTimeout(() => {
-      archiveSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, []);
-
-  const closeArchive = useCallback(() => {
-    setActiveArchive(null);
-    document.getElementById('archives')?.scrollIntoView({ behavior: 'smooth' });
-  }, []);
-
-  const activeItem = ARCHIVE_ITEMS.find(i => i.id === activeArchive);
 
   // Animate case study slides on scroll
   useGSAP(() => {
@@ -323,52 +220,82 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* ARCHIVE */}
-          <div className="hero-extra" id="archives">
-            <RevealOnScroll>
-              <div className="hero-extra-box">
-                <div className="hero-casestudy-title hero-top-intro-para-moreworks-box">
+          {/* SKILLS */}
+          <div className="hero-extra" id="skills">
+            <div className="hero-extra-box">
+              <div className="hero-casestudy-title hero-top-intro-para-moreworks-box">
+                <RevealOnScroll>
                   <div className="section-indicators-project">
-                    <h3><span>Archive</span></h3>
+                    <h3><span>Skills</span></h3>
                   </div>
+                </RevealOnScroll>
 
-                  <div className="hero-top-intro-para">
-                    <div className="hero-top-intro-para-title">
-                      <h3>Keep Working.</h3>
-                      <h4>2024—2026, and Keep Moving Forward.</h4>
+                <div className="hero-top-intro-para w-full flex-col">
+                  <RevealOnScroll>
+                    <div className="hero-top-intro-para-title w-full">
+                      <h3>Technical Arsenal.</h3>
+                      <h4 className="mt-2" style={{ color: 'var(--text-secondary)' }}>Languages, Frameworks, and Cloud Architecture.</h4>
                     </div>
-
-                    <div className="works-view-toggle">
-                      <button
-                        className={archiveView === 'list' ? 'active' : ''}
-                        onClick={() => setArchiveView('list')}
-                        data-text="List"
-                      >
-                        <i className="ri-menu-fill" />
-                      </button>
-                      <button
-                        className={archiveView === 'gallery' ? 'active' : ''}
-                        onClick={() => setArchiveView('gallery')}
-                        data-text="Gallery"
-                      >
-                        <i className="ri-mac-fill" />
-                      </button>
-                    </div>
-                  </div>
+                  </RevealOnScroll>
                 </div>
               </div>
-            </RevealOnScroll>
 
-            <div className={`hero-extra-works-box ${archiveView}`}>
-              <ul>
-                {ARCHIVE_ITEMS.map(item => (
-                  <ArchiveListItem
-                    key={item.id}
-                    item={item}
-                    onClick={() => openArchive(item.id)}
-                  />
-                ))}
-              </ul>
+              <div className="skills-grid mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:px-44 px-4 w-full">
+                <RevealOnScroll>
+                  <div className="skill-category">
+                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Languages &amp; DBs</h4>
+                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      <li>Python, TypeScript, JS (ES6+)</li>
+                      <li>Java</li>
+                      <li>PostgreSQL, MySQL</li>
+                    </ul>
+                  </div>
+                </RevealOnScroll>
+                
+                <RevealOnScroll>
+                  <div className="skill-category">
+                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Frontend &amp; UI</h4>
+                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      <li>React.js, Next.js 14/15</li>
+                      <li>React Query, Zustand</li>
+                      <li>Tailwind CSS, Recharts</li>
+                    </ul>
+                  </div>
+                </RevealOnScroll>
+                
+                <RevealOnScroll>
+                  <div className="skill-category">
+                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Backend &amp; API</h4>
+                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      <li>Node.js, REST APIs</li>
+                      <li>Prisma ORM, SQLAlchemy</li>
+                      <li>tRPC</li>
+                    </ul>
+                  </div>
+                </RevealOnScroll>
+
+                <RevealOnScroll>
+                  <div className="skill-category">
+                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>AI Engineering</h4>
+                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      <li>Multi-Agent Systems, LangChain</li>
+                      <li>RAG Architecture, Semantic Search</li>
+                      <li>Vector DBs, Vercel AI SDK</li>
+                    </ul>
+                  </div>
+                </RevealOnScroll>
+
+                <RevealOnScroll>
+                  <div className="skill-category">
+                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>DevOps &amp; Cloud</h4>
+                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      <li>Docker, Git/GitHub</li>
+                      <li>Vercel, Stripe Webhooks</li>
+                      <li>Clerk Auth, n8n Automation</li>
+                    </ul>
+                  </div>
+                </RevealOnScroll>
+              </div>
             </div>
           </div>
 
@@ -411,24 +338,6 @@ export default function HomePage() {
 
         {/* FOOTER */}
         <Footer />
-      </section>
-
-      {/* ARCHIVE DETAIL SECTION */}
-      <section
-        ref={archiveSectionRef}
-        id="page-archive"
-        className={`archive-section ${activeArchive ? 'is-active' : ''}`}
-      >
-        <div className="goback-btn-wrapper">
-          <button className="goback-btn" data-text="Back" onClick={closeArchive}>
-            <i className="ri-arrow-left-line" />
-            <h4>Go Back</h4>
-          </button>
-        </div>
-
-        <div className="archive-container-wrapping-box">
-          {activeItem && <ArchiveDetail item={activeItem} onBack={closeArchive} />}
-        </div>
       </section>
     </div>
   );

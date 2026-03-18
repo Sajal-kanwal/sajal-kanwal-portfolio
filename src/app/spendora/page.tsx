@@ -5,11 +5,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Lights of Seoul — Sajal Kanwal',
-  description: 'Brand Identity & Festival case study by Sajal Kanwal',
+  title: 'Spendora — Sajal Kanwal',
+  description: 'Real-Time Financial Telemetry Dashboard case study by Sajal Kanwal',
 };
 
-export default function LightsOfSeoulPage() {
+export default function SpendoraPage() {
   const images = [
     '/images/lightsofseoul/lightofseoul_thumbnail_520h.jpg',
     '/images/lightsofseoul/Lights_of_Seoul_Banner01.jpg',
@@ -48,8 +48,8 @@ export default function LightsOfSeoulPage() {
         <RevealOnScroll>
           <div style={{ marginBottom: '48px' }}>
             <h4 style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>Casestudy 03</h4>
-            <h1 style={{ fontSize: 'clamp(36px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.1, marginBottom: '12px' }}>Lights of Seoul</h1>
-            <h3 style={{ fontSize: '16px', fontWeight: 400, color: 'var(--text-secondary)' }}>Brand Identity &amp; Festival</h3>
+            <h1 style={{ fontSize: 'clamp(36px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.1, marginBottom: '12px' }}>Spendora</h1>
+            <h3 style={{ fontSize: '16px', fontWeight: 400, color: 'var(--text-secondary)' }}>Real-Time Financial Telemetry Dashboard</h3>
           </div>
         </RevealOnScroll>
 
@@ -58,7 +58,7 @@ export default function LightsOfSeoulPage() {
             <div>
               <h5 style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', color: 'var(--muted)', marginBottom: '8px' }}>TASKS</h5>
               <ul style={{ listStyle: 'none', display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                {['Cultural Research', 'Concept Development', 'Visual Identity', 'Wayfinding'].map(t => (
+                {['Next.js', 'PostgreSQL', 'Prisma', 'Clerk'].map(t => (
                   <li key={t} style={{ fontSize: '12px', padding: '4px 10px', border: '1px solid var(--border)', borderRadius: '16px', color: 'var(--text-secondary)' }}>{t}</li>
                 ))}
               </ul>
