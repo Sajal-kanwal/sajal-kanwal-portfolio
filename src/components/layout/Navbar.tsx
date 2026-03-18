@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import SearchModal from '@/components/search/SearchModal';
+import CVModal from '@/components/shared/CVModal';
 
 const navItems = [
   { label: 'Home', href: '/', icon: 'ri-home-line', page: 'home' },
@@ -63,6 +64,7 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
+              <CVModal />
             </ul>
 
             <SearchModal />

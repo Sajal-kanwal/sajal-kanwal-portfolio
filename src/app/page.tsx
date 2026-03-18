@@ -6,6 +6,7 @@ import Image from 'next/image';
 import RevealOnScroll from '@/components/shared/RevealOnScroll';
 import Footer from '@/components/layout/Footer';
 import GoTopButton from '@/components/layout/GoTopButton';
+import SkillsSection from '@/components/sections/SkillsSection';
 import { CASE_STUDIES, EXPERIENCES, SOCIAL_LINKS } from '@/lib/constants';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -272,82 +273,8 @@ export default function HomePage() {
           </div>
 
           {/* SKILLS */}
-          <div className="hero-extra" id="skills">
-            <div className="hero-extra-box">
-              <div className="hero-casestudy-title hero-top-intro-para-moreworks-box">
-                <RevealOnScroll>
-                  <div className="section-indicators-project">
-                    <h3><span>Skills</span></h3>
-                  </div>
-                </RevealOnScroll>
-
-                <div className="hero-top-intro-para w-full flex-col">
-                  <RevealOnScroll>
-                    <div className="hero-top-intro-para-title w-full">
-                      <h3>Technical Arsenal.</h3>
-                      <h4 className="mt-2" style={{ color: 'var(--text-secondary)' }}>Languages, Frameworks, and Cloud Architecture.</h4>
-                    </div>
-                  </RevealOnScroll>
-                </div>
-              </div>
-
-              <div className="skills-grid mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:px-44 px-4 w-full">
-                <RevealOnScroll>
-                  <div className="skill-category">
-                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Languages &amp; DBs</h4>
-                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                      <li>Python, TypeScript, JS (ES6+)</li>
-                      <li>Java</li>
-                      <li>PostgreSQL, MySQL</li>
-                    </ul>
-                  </div>
-                </RevealOnScroll>
-
-                <RevealOnScroll>
-                  <div className="skill-category">
-                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Frontend &amp; UI</h4>
-                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                      <li>React.js, Next.js 14/15</li>
-                      <li>React Query, Zustand</li>
-                      <li>Tailwind CSS, Recharts</li>
-                    </ul>
-                  </div>
-                </RevealOnScroll>
-
-                <RevealOnScroll>
-                  <div className="skill-category">
-                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Backend &amp; API</h4>
-                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                      <li>Node.js, REST APIs</li>
-                      <li>Prisma ORM, SQLAlchemy</li>
-                      <li>tRPC</li>
-                    </ul>
-                  </div>
-                </RevealOnScroll>
-
-                <RevealOnScroll>
-                  <div className="skill-category">
-                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>AI Engineering</h4>
-                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                      <li>Multi-Agent Systems, LangChain</li>
-                      <li>RAG Architecture, Semantic Search</li>
-                      <li>Vector DBs, Vercel AI SDK</li>
-                    </ul>
-                  </div>
-                </RevealOnScroll>
-
-                <RevealOnScroll>
-                  <div className="skill-category">
-                    <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>DevOps &amp; Cloud</h4>
-                    <ul className="text-[14px] space-y-2 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                      <li>Docker, Git/GitHub</li>
-                      <li>Vercel, Stripe Webhooks</li>
-                      <li>Clerk Auth, n8n Automation</li>
-                    </ul>
-                  </div>
-                </RevealOnScroll>
-              </div>
-            </div>
+          <div id="skills">
+            <SkillsSection />
           </div>
 
           {/* CONTACT CTA */}

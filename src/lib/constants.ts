@@ -7,8 +7,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     subtitle: 'AI-Powered GitHub Collaboration SaaS',
     tasks: ['Next.js 15', 'PostgreSQL', 'LangChain', 'tRPC'],
     slug: 'repo-lens',
-    baseImage: '/images/thefavricexpo/thefabricexpo-binder03-square.jpg',
-    hoverImage: '/images/thefavricexpo/thefabricexpo-misc01-square.jpg',
+    baseImage: '/images/thefavricexpo/thefabricexpo-binder02.jpg',
+    hoverImage: '/images/iwasntthere/2025Dec_FirstBooklet_Page03.jpg',
   },
   {
     number: 'Casestudy 02',

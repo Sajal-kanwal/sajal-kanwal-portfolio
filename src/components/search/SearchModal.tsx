@@ -175,57 +175,57 @@ export default function SearchModal() {
   };
 
   const modalContent = (
-      <div
-        ref={modalRef}
-        className={`search-modal ${isOpen ? 'active' : ''}`}
-        onClick={e => { if (e.target === modalRef.current) hide(); }}
-      >
-        <div className="search-modal-wrapper">
-          <div className="search-intro">
-            <h3>Hello there, I&apos;m a search assistant.</h3>
-          </div>
-
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Type to search…"
-            autoComplete="off"
-            style={{
-              width: '100%',
-              background: 'none',
-              border: 'none',
-              outline: 'none',
-              color: '#020814',
-              fontFamily: 'var(--font-geist)',
-              fontSize: '16px',
-              padding: '8px 0',
-              marginBottom: '12px',
-              borderBottom: '1px solid var(--border)',
-            }}
-          />
-
-          <div className="search-preview-text">
-            {renderPreview()}
-          </div>
-
-          {!query && (
-            <div className="search-default">
-              <h3>Tips</h3>
-              <ul>
-                <li>
-                  Open by <span>K</span> + <span><i className="ri-command-fill" /></span>
-                </li>
-                <li>
-                  Select by arrow keys <span><i className="ri-arrow-up-s-line" /></span> / <span><i className="ri-arrow-down-s-line" /></span>
-                </li>
-              </ul>
-            </div>
-          )}
+    <div
+      ref={modalRef}
+      className={`search-modal ${isOpen ? 'active' : ''}`}
+      onClick={e => { if (e.target === modalRef.current) hide(); }}
+    >
+      <div className="search-modal-wrapper">
+        <div className="search-intro">
+          <h3>Hello there, I&apos;m a search assistant.</h3>
         </div>
+
+        <input
+          ref={inputRef}
+          type="text"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Type to search…"
+          autoComplete="off"
+          style={{
+            width: '100%',
+            background: 'none',
+            border: 'none',
+            outline: 'none',
+            color: '#020814',
+            fontFamily: 'var(--font-geist)',
+            fontSize: '16px',
+            padding: '8px 0',
+            marginBottom: '12px',
+            borderBottom: '1px solid var(--border)',
+          }}
+        />
+
+        <div className="search-preview-text">
+          {renderPreview()}
+        </div>
+
+        {!query && (
+          <div className="search-default">
+            <h3>Tips</h3>
+            <ul>
+              <li>
+                Open by <span>K</span> + <span><i className="ri-command-fill" /></span>
+              </li>
+              <li>
+                Select by arrow keys <span><i className="ri-arrow-up-s-line" /></span> / <span><i className="ri-arrow-down-s-line" /></span>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
+    </div>
   );
 
   return (
@@ -241,9 +241,9 @@ export default function SearchModal() {
           style={{ cursor: 'none' }}
         />
         <div className="search-key">
-          <span className="letter-key">K</span>
-          <p className="plus">+</p>
           <span><i className="ri-command-fill" /></span>
+          <p className="plus">+</p>
+          <span className="letter-key">K</span>
         </div>
       </div>
 

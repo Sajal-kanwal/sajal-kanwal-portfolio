@@ -76,7 +76,7 @@ img {
   background: transparent;
   mix-blend-mode: difference;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 999999; /* Absolute max to overlay React Portals */
   display: none;
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
