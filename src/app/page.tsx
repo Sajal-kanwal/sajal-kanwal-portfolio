@@ -99,7 +99,7 @@ export default function HomePage() {
         <div className="hero-landing">
           <div className="hero-landing-content">
             <h1 className="hero-landing-title">
-              (©SAJAL<br/>KANWAL — 2026)
+              (©SAJAL<br />KANWAL — 2026)
             </h1>
             <p className="hero-landing-desc">
               I am a Full-Stack AI Engineer based in Dharamshala, building intelligent multi-agent systems and scalable real-time SaaS applications.
@@ -108,7 +108,7 @@ export default function HomePage() {
               <Link href="/about" className="hover-trigger" data-text="Beep Beep">
                 <img src="/images/profile/profile_barcode.png" alt="Barcode" />
               </Link>
-              <span>Made in India—Canada</span>
+              <span>Made in India</span>
             </div>
           </div>
         </div>
@@ -270,7 +270,7 @@ export default function HomePage() {
                     </ul>
                   </div>
                 </RevealOnScroll>
-                
+
                 <RevealOnScroll>
                   <div className="skill-category">
                     <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Frontend &amp; UI</h4>
@@ -281,7 +281,7 @@ export default function HomePage() {
                     </ul>
                   </div>
                 </RevealOnScroll>
-                
+
                 <RevealOnScroll>
                   <div className="skill-category">
                     <h4 className="text-[18px] mb-4" style={{ color: 'var(--text)' }}>Backend &amp; API</h4>

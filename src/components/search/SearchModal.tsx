@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import { SEARCH_ITEMS, FUN_RESPONSES } from '@/lib/constants';
 import { normalize } from '@/lib/utils';
 
 export default function SearchModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [previewContent, setPreviewContent] = useState('');
@@ -32,6 +34,11 @@ export default function SearchModal() {
     return SEARCH_ITEMS.filter(item =>
       item.keywords.some(k => k.startsWith(q))
     );
+  }, []);
+
+  // Handle hydration
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   // Handle input changes
@@ -167,26 +174,7 @@ export default function SearchModal() {
     return <div>{previewContent}</div>;
   };
 
-  return (
-    <>
-      {/* Search trigger in nav */}
-      <div className="nav-search" onClick={() => { show(); setTimeout(() => inputRef.current?.focus(), 50); }}>
-        <i className="ri-search-line search-icon" />
-        <input
-          type="text"
-          placeholder="Search"
-          autoComplete="off"
-          readOnly
-          style={{ cursor: 'none' }}
-        />
-        <div className="search-key">
-          <span className="letter-key">K</span>
-          <p className="plus">+</p>
-          <span><i className="ri-command-fill" /></span>
-        </div>
-      </div>
-
-      {/* Modal */}
+  const modalContent = (
       <div
         ref={modalRef}
         className={`search-modal ${isOpen ? 'active' : ''}`}
@@ -238,6 +226,29 @@ export default function SearchModal() {
           )}
         </div>
       </div>
+  );
+
+  return (
+    <>
+      {/* Search trigger in nav */}
+      <div className="nav-search" onClick={() => { show(); setTimeout(() => inputRef.current?.focus(), 50); }}>
+        <i className="ri-search-line search-icon" />
+        <input
+          type="text"
+          placeholder="Search"
+          autoComplete="off"
+          readOnly
+          style={{ cursor: 'none' }}
+        />
+        <div className="search-key">
+          <span className="letter-key">K</span>
+          <p className="plus">+</p>
+          <span><i className="ri-command-fill" /></span>
+        </div>
+      </div>
+
+      {/* Modal */}
+      {mounted && createPortal(modalContent, document.body)}
     </>
   );
 }
