@@ -1,0 +1,55 @@
+Sajal Kanwal
+LinkedIn: linkedin.com/in/sajal-kanwal Email: sajal.kanwal02@gmail.com
+GitHub: github.com/Sajal-kanwal Mobile: +91-6230042817
+TECHNICAL SKILLS
+LanguagesPython, TypeScript, JavaScript (ES6+), Java, SQL (PostgreSQL, MySQL)
+FrontendReact.js, Next.js 14 (App Router), React Query, Tailwind CSS, Zustand, Recharts
+Backend & DBsNode.js, PostgreSQL, Prisma ORM, SQLAlchemy, REST APIs, tRPC
+AI EngineeringMulti-Agent Systems, LangChain, RAG Architecture, Vercel AI SDK, Semantic
+Search, Vector DBs
+DevOps & ToolsGit/GitHub, Docker, Vercel, Stripe Webhooks, Octokit, Clerk Auth, n8n
+Core CompetenciesSaaS Architecture, Modular ETL Pipelines, LLM & RAG Integration, Database
+Query Optimization, Asynchronous Processing, Agile Development
+PROJECTS
+Repo Lens: AI-Powered GitHub Collaboration SaaS /github
+Next.js 15·PostgreSQL·LangChain·tRPC·Google Gemini·Vercel AI SDK
+A multi-tenant SaaS platform that semantically indexes GitHub repositories and exposes a streaming AI chat interface
+for codebase Q&A and commit intelligence.Mar’ 2026
+•Designed a production-grade RAG pipeline using LangChain and Google Gemini, generating 768-dimensional codebase embeddings
+in PostgreSQL via pgvector ; raw SQL cosine similarity queries (threshold >0.5) inject the top- krelevant files into the LLM
+context window, achieving sub-100ms semantic retrieval latency.
+•Engineered an event-driven async processing engine via Octokit to poll Git commit diffs and trigger AI summarization jobs outside
+the serverless execution boundary, eliminating cold-start timeout failures for compute-heavy workloads.
+•Enforced end-to-end type safety across client, server, and database layers via tRPC, Prisma ORM, and React Query; designed a
+repository-size-tiered credit ledger with Stripe Webhooks , enabling real-time balance reconciliation and fraud-resistant
+monetization.
+Sentinel: Autonomous AI Content Intelligence System /github
+Python·PostgreSQL·OpenAI API·Docker·SQLAlchemy·n8n
+A self-hosted multi-agent news intelligence pipeline that ingests, ranks, and delivers personalized daily digests — fully
+containerized for zero-drift deployment.Jan’ 2026
+•Architected a pluggable scraping framework using the Registry Design Pattern to orchestrate heterogeneous collectors (YouTube
+transcripts, RSS feeds), reducing time-to-onboard-new-source to under 30 minutes and cutting manual research overhead by 98%.
+•Designed a three-agent LLM pipeline (Curator→Digest→Email) with profile-weighted relevance scoring, surfacing high-signal
+content at 3.2×the precision of keyword-only filtering baselines.
+•Shipped an idempotent email delivery pipeline via SMTP and Cron scheduling with DB-level content hashing, guaranteeing
+exactly-once delivery semantics across all daily digest executions.
+Spendora: Real-Time Financial Telemetry Dashboard /external-link-alt/github
+Next.js 14·PostgreSQL·Prisma·Clerk·Zod·Recharts
+A full-stack personal finance platform with real-time transaction tracking, analytics dashboards, and schema-enforced
+type safety across the entire data pipeline.Jul’ 2025
+•Architected a zero-client-bundle data layer using Next.js 14 Server Components and React Suspense boundaries, improving First
+Contentful Paint by 40% (1.2s→0.72s) on cold loads.
+•Eliminated full-table scan bottlenecks on 10K+ records by designing composite B-Tree indexes on(user_id, date, category) ,
+driving p95 query latency from >800ms to under 200ms — a4×throughput improvement.
+•Enforced schema-first type safety via Prisma and Zod across all API boundaries, eliminating runtime serialization errors and
+closing SQL injection vectors at the ORM layer.
+CERTIFICATIONS
+•Oracle Cloud Infrastructure 2025 Certified Developer Professional — Oracle Nov’ 2025
+•Oracle Cloud Infrastructure 2025 Certified Generative AI Professional — Oracle Oct’ 2025
+•Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate — Oracle Oct’ 2025
+ACHIEVEMENTS
+•Top 50 – GeeksforGeeks Hack the Future: Engineered a RAG pipeline for 10K+ docs, cutting retrieval latency by 70% (500ms →
+150ms) via Recursive Character Chunking and local Qdrant (HNSW) . Apr’ 2025
+EDUCATION
+Lovely Professional University Phagwara, Punjab
+B.Tech in Computer Science & Engineering (Data Science & ML) - CGPA: 8.55/10.0 Aug’ 2023 – Present
