@@ -44,11 +44,11 @@ export default function ContactPage() {
           <ul className="contact-socialmedia">
             <li>
               <h4>Email</h4>
-              <a href="mailto:desn.yeomsydney@gmail.com" data-text="Send Me an Email">yeomsydney@gmail.com</a>
+              <a href="mailto:sajal.kanwal02@gmail.com" data-text="Send Me an Email">sajal.kanwal02@gmail.com</a>
             </li>
             <li>
               <h4>LinkedIn</h4>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" data-text="Follow Me!">@seunghyeon</a>
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" data-text="Follow Me!">@Sajal-kanwal</a>
             </li>
             <li>
               <h4>GitHub</h4>

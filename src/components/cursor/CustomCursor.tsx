@@ -14,9 +14,9 @@ export default function CustomCursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    pos.currentX = lerp(pos.currentX, pos.cursorX, 0.08);
-    pos.currentY = lerp(pos.currentY, pos.cursorY, 0.08);
-    cursor.style.transform = `translate(calc(-50% + ${pos.currentX}px), calc(-90% + ${pos.currentY}px))`;
+    pos.currentX = lerp(pos.currentX, pos.cursorX, 0.15);
+    pos.currentY = lerp(pos.currentY, pos.cursorY, 0.15);
+    cursor.style.transform = `translate(calc(-50% + ${pos.currentX}px), calc(-50% + ${pos.currentY}px))`;
     rafRef.current = requestAnimationFrame(animateCursor);
   }, []);
 
@@ -35,6 +35,7 @@ export default function CustomCursor() {
       const dataTextEl = target.closest('[data-text]') as HTMLElement | null;
       const text = dataTextEl?.dataset.text || '';
       textRef.current = text;
+      
       if (cursor) {
         cursor.textContent = text;
         cursor.classList.add('expanded');
@@ -51,10 +52,10 @@ export default function CustomCursor() {
 
     const onClick = () => {
       if (cursor) {
-        cursor.style.transform += ' scale(0.85)';
+        cursor.style.transform += ' scale(0.9)';
         setTimeout(() => {
           if (cursor) {
-            cursor.style.transform = cursor.style.transform.replace(' scale(0.85)', '');
+            cursor.style.transform = cursor.style.transform.replace(' scale(0.9)', '');
           }
         }, 80);
       }

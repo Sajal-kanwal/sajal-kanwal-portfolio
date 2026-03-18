@@ -64,11 +64,6 @@ export default function Footer() {
                     <i className="ri-instagram-line" />
                   </a>
                 </li>
-                <li>
-                  <a className="ft-credit-connectBox-each" href={SOCIAL_LINKS.github} target="_blank" data-text="GitHub">
-                    <i className="ri-github-fill" />
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -76,8 +71,8 @@ export default function Footer() {
               <h3 className="footer-credit-connectBox-title">Let&apos;s Talk</h3>
               <ul>
                 <li>
-                  <a className="ft-credit-call-each" href={SOCIAL_LINKS.calendly} target="_blank" data-text="Book a call">
-                    <h4>Book a Call</h4>
+                  <a className="ft-credit-call-each" href={SOCIAL_LINKS.calendly} target="_blank" data-text="Get in Touch">
+                    <h4>Get in Touch</h4>
                     <i className="ri-arrow-right-line" />
                   </a>
                   <h5>Always open to talk!</h5>

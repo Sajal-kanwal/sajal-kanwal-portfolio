@@ -105,8 +105,40 @@ export default function HomePage() {
               I am a Full-Stack AI Engineer based in Dharamshala, building intelligent multi-agent systems and scalable real-time SaaS applications.
             </p>
             <div className="hero-landing-barcode">
-              <Link href="/about" className="hover-trigger" data-text="Beep Beep">
-                <img src="/images/profile/profile_barcode.png" alt="Barcode" />
+              <Link href="/about" className="hover-trigger relative inline-block group" data-text="Beep Beep">
+                <svg width="120" height="40" viewBox="0 0 180 60" fill="var(--text)" xmlns="http://www.w3.org/2000/svg" className="block relative z-10 transition-colors duration-300">
+                  <rect x="0" y="0" width="4" height="60" />
+                  <rect x="6" y="0" width="2" height="60" />
+                  <rect x="10" y="0" width="6" height="60" />
+                  <rect x="18" y="0" width="2" height="60" />
+                  <rect x="22" y="0" width="8" height="60" />
+                  <rect x="33" y="0" width="3" height="60" />
+                  <rect x="38" y="0" width="1" height="60" />
+                  <rect x="41" y="0" width="5" height="60" />
+                  <rect x="48" y="0" width="3" height="60" />
+                  <rect x="54" y="0" width="7" height="60" />
+                  <rect x="64" y="0" width="2" height="60" />
+                  <rect x="68" y="0" width="4" height="60" />
+                  <rect x="74" y="0" width="6" height="60" />
+                  <rect x="82" y="0" width="1" height="60" />
+                  <rect x="85" y="0" width="3" height="60" />
+                  <rect x="90" y="0" width="8" height="60" />
+                  <rect x="101" y="0" width="2" height="60" />
+                  <rect x="105" y="0" width="5" height="60" />
+                  <rect x="112" y="0" width="3" height="60" />
+                  <rect x="117" y="0" width="6" height="60" />
+                  <rect x="125" y="0" width="1" height="60" />
+                  <rect x="128" y="0" width="4" height="60" />
+                  <rect x="134" y="0" width="7" height="60" />
+                  <rect x="143" y="0" width="3" height="60" />
+                  <rect x="148" y="0" width="2" height="60" />
+                  <rect x="152" y="0" width="5" height="60" />
+                  <rect x="159" y="0" width="4" height="60" />
+                  <rect x="165" y="0" width="2" height="60" />
+                  <rect x="169" y="0" width="6" height="60" />
+                  <rect x="177" y="0" width="3" height="60" />
+                </svg>
+                <div className="absolute top-1/2 left-0 w-full h-[15%] bg-[#e31f1f] -translate-y-1/2 scale-x-110 opacity-100 transition-transform duration-500 ease-out z-20 pointer-events-none group-hover:scale-x-125"></div>
               </Link>
               <span>Made in India</span>
             </div>
@@ -120,7 +152,7 @@ export default function HomePage() {
               <div className="about-grid">
                 <div className="about-label">
                   <span>About</span>
-                  <div className="about-label-circle"></div>
+                  {/* <div className="about-label-circle"></div> */}
                 </div>
 
                 <div className="about-content">
@@ -128,7 +160,7 @@ export default function HomePage() {
                     <h3 className="about-text">
                       Hello, I&apos;m Sajal, a Full-Stack AI Engineer based in Dharamshala.{' '}
                       <span>
-                        With expertise in building intelligent multi-agent systems and real-time interactive SaaS applications, I craft scalable architectures and responsive interfaces. I focus on LLM integration, complex database optimizations, and resilient web frameworks.
+                        I build intelligent multi-agent systems and highly scalable SaaS architectures, specializing in LLM integration and real-time backend infrastructure.
                       </span>
                     </h3>
                   </RevealOnScroll>
@@ -338,9 +370,9 @@ export default function HomePage() {
                     </div>
 
                     <RevealOnScroll>
-                      <div className="hero-top-call-btn" data-text="Book a call">
+                      <div className="hero-top-call-btn" data-text="Get in Touch">
                         <a className="ft-credit-call-each" href={SOCIAL_LINKS.calendly} target="_blank">
-                          <h4>Book a Call</h4>
+                          <h4>Get in Touch</h4>
                           <i className="ri-arrow-right-line" />
                         </a>
                       </div>

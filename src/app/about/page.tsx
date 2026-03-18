@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About — Sajal Kanwal',
-  description: 'About Sajal Kanwal, a branding designer focused on typography and systems.',
+  description: 'About Sajal Kanwal, a software engineer focused on AI systems.',
 };
 
 export default function AboutPage() {

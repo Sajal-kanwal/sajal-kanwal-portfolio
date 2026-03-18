@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link href="/" className="nav-logo-link">
               <h3>Sajal Kanwal</h3>
             </Link>
-            <h4>Branding Designer</h4>
+            <h4>Software Engineer</h4>
           </div>
 
           <div className="main-nav-pc-top main-nav-call" data-text="Contact">
