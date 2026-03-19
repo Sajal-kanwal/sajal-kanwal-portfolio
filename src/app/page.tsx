@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import RevealOnScroll from '@/components/shared/RevealOnScroll';
 import Footer from '@/components/layout/Footer';
-import SplitTextReveal from '@/components/animations/SplitTextReveal';
-import ProjectsReveal from '@/components/animations/ProjectsReveal';
 import MagneticWrapper from '@/components/ui/MagneticWrapper';
 import GoTopButton from '@/components/layout/GoTopButton';
 import SkillsSection from '@/components/sections/SkillsSection';
@@ -29,7 +27,7 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
   useGSAP(() => {
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
     if (!cardRef.current || !thumbRef.current) return;
-    
+
     const xTo = gsap.quickTo(thumbRef.current, "x", { duration: 1, ease: "power3.out" });
     const yTo = gsap.quickTo(thumbRef.current, "y", { duration: 1, ease: "power3.out" });
 
@@ -38,7 +36,7 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
       // Calculate normalized mouse position relative to card center
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-      
+
       // Soft parallax strength
       xTo(x * 0.08);
       yTo(y * 0.08);
@@ -51,7 +49,7 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
 
     cardRef.current.addEventListener('mousemove', handleMouseMove);
     cardRef.current.addEventListener('mouseleave', handleMouseLeave);
-    
+
     return () => {
       cardRef.current?.removeEventListener('mousemove', handleMouseMove);
       cardRef.current?.removeEventListener('mouseleave', handleMouseLeave);
