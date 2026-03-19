@@ -13,10 +13,10 @@ export default function SpendoraPage() {
   const images = [];
 
   return (
-    <section className="about-section" style={{ paddingTop: '80px' }}>
-      <div className="about-container" style={{ maxWidth: '1000px' }}>
+    <section className="about-section">
+      <div className="about-container">
         <RevealOnScroll>
-          <div style={{ marginBottom: '16px' }}>
+          <div className="mb-2 md:mb-4">
             <Link href="/#casestudies" className="btn-wrapper" data-text="Back">
               <i className="ri-arrow-left-line" />
               <h4>Back to Projects</h4>
@@ -25,69 +25,69 @@ export default function SpendoraPage() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <div style={{ marginBottom: '48px' }}>
-            <h4 style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>Casestudy 03</h4>
-            <h1 style={{ fontSize: 'clamp(36px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.1, marginBottom: '12px' }}>Spendora</h1>
-            <h3 style={{ fontSize: '16px', fontWeight: 400, color: 'var(--text-secondary)' }}>Real-Time Financial Telemetry Dashboard</h3>
+          <div className="mb-4 md:mb-8">
+            <h4 className="text-[10px] text-[var(--muted)] tracking-[0.1em] uppercase mb-2">Casestudy 03</h4>
+            <h1 className="text-[clamp(1.5rem,4vw,2.5rem)] font-light leading-[1.1] mb-2">Spendora</h1>
+            <h3 className="text-[12px] md:text-[14px] font-normal text-[var(--text-secondary)]">Next-Gen FinTech Expense Management</h3>
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <div style={{ display: 'flex', gap: '32px', marginBottom: '64px', flexWrap: 'wrap' }}>
+          <div className="flex gap-4 mb-8 flex-wrap">
             <div>
-              <h5 style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', color: 'var(--muted)', marginBottom: '8px' }}>TASKS</h5>
-              <ul style={{ listStyle: 'none', display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                {['Next.js', 'PostgreSQL', 'Prisma', 'Clerk'].map(t => (
-                  <li key={t} style={{ fontSize: '12px', padding: '4px 10px', border: '1px solid var(--border)', borderRadius: '16px', color: 'var(--text-secondary)' }}>{t}</li>
+              <h5 className="text-[10px] font-semibold tracking-[0.08em] text-[var(--muted)] mb-2 uppercase">TASKS</h5>
+              <ul className="list-none flex gap-2 flex-wrap">
+                {['React Native', 'Node.js', 'PostgreSQL', 'AWS'].map(t => (
+                  <li key={t} className="text-[11px] px-3 py-1 border border-[var(--border)] rounded-full text-[var(--text-secondary)]">{t}</li>
                 ))}
               </ul>
             </div>
           </div>
         </RevealOnScroll>
 
-        <div className="my-24 md:my-32">
+        <div className="my-10 md:my-16">
           <RevealOnScroll>
-            <div className="mb-24 md:mb-32">
-              <h2 className="text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] mb-8 font-medium">The Vision</h2>
-              <h3 className="text-[clamp(28px,4vw,48px)] font-light leading-[1.2] text-[var(--text)] tracking-tight max-w-4xl">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] mb-4 font-medium">The Vision</h2>
+              <h3 className="text-[clamp(18px,2.5vw,32px)] font-light leading-[1.2] text-[var(--text)] tracking-tight max-w-4xl">
                 Illuminating financial habits with <br className="hidden md:block"/>
                 <span className="text-[var(--text-secondary)]">real-time predictive telemetry.</span>
               </h3>
-              <p className="mt-8 text-[16px] md:text-[18px] leading-[1.8] text-[var(--text-secondary)] max-w-2xl">
+              <p className="mt-4 text-[13px] md:text-[14px] leading-[1.8] text-[var(--text-secondary)] max-w-2xl">
                 Spendora is a Real-Time Financial Telemetry Dashboard providing unparalleled visibility into personal and enterprise spending behaviors. Moving beyond static budgets, Spendora uses machine learning to categorize transactions, forecast future cash flows, and alert users to anomalous patterns instantly.
               </p>
             </div>
           </RevealOnScroll>
           
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 pt-16 border-t border-[var(--border)] mb-24 md:mb-32">
-            <div className="md:col-span-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 pt-6 border-t border-[var(--border)] mb-10 md:mb-16">
+            <div className="md:col-span-3">
               <RevealOnScroll>
-                <h4 className="text-[13px] uppercase tracking-[0.2em] text-[var(--text)] font-medium">Core Capabilities</h4>
+                <h4 className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-medium">Core Capabilities</h4>
               </RevealOnScroll>
             </div>
-            <div className="md:col-span-8">
-              <ul className="space-y-16">
+            <div className="md:col-span-9">
+              <ul className="space-y-6 md:space-y-10">
                 <RevealOnScroll>
                   <li className="group">
-                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Algorithmic Categorization</h5>
-                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
-                      Automatically sorts inbound and outbound transactions with 98% programmatic accuracy using historical bank data and ML clustering.
+                    <h5 className="text-[clamp(16px,2vw,24px)] font-light text-[var(--text)] mb-2 tracking-tight">Smart Tracking</h5>
+                    <p className="text-[13px] md:text-[14px] leading-relaxed text-[var(--text-secondary)] max-w-2xl">
+                      Automatically categorize and monitor multi-currency expenditures with real-time exchange rate normalization.
                     </p>
                   </li>
                 </RevealOnScroll>
                 <RevealOnScroll>
                   <li className="group">
-                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Predictive Forecasting</h5>
-                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
-                      Projects end-of-month balances and cash flow trajectories by factoring in recurring subscriptions and historical burn rates.
+                    <h5 className="text-[clamp(16px,2vw,24px)] font-light text-[var(--text)] mb-2 tracking-tight">Budget Forecasting</h5>
+                    <p className="text-[13px] md:text-[14px] leading-relaxed text-[var(--text-secondary)] max-w-2xl">
+                      AI-driven projections for future spending patterns, helping users optimize their financial planning and savings.
                     </p>
                   </li>
                 </RevealOnScroll>
                 <RevealOnScroll>
                   <li className="group">
-                    <h5 className="text-[clamp(24px,3vw,32px)] font-light text-[var(--text)] mb-4 tracking-tight transition-colors">Interactive Visualizations</h5>
-                    <p className="text-[15px] md:text-[16px] leading-relaxed text-[var(--text-secondary)] max-w-xl">
-                      Clean, highly responsive metric charts enabling fluid deep-dives into spending behaviors across custom dimensions and timeframes.
+                    <h5 className="text-[clamp(16px,2vw,24px)] font-light text-[var(--text)] mb-2 tracking-tight">Secure Integrations</h5>
+                    <p className="text-[13px] md:text-[14px] leading-relaxed text-[var(--text-secondary)] max-w-2xl">
+                      End-to-end encrypted bank-level protocols ensuring the highest security standards for personal and corporate financial data.
                     </p>
                   </li>
                 </RevealOnScroll>
@@ -95,13 +95,13 @@ export default function SpendoraPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 pt-16 border-t border-[var(--border)]">
-            <div className="md:col-span-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 pt-6 border-t border-[var(--border)]">
+            <div className="md:col-span-3">
               <RevealOnScroll>
-                <h4 className="text-[13px] uppercase tracking-[0.2em] text-[var(--text)] font-medium">Architecture</h4>
+                <h4 className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-medium">Architecture</h4>
               </RevealOnScroll>
             </div>
-            <div className="md:col-span-8">
+            <div className="md:col-span-9">
               <RevealOnScroll>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-10 gap-x-8">
                   <div>

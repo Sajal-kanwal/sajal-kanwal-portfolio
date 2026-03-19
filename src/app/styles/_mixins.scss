@@ -1,0 +1,51 @@
+@use "sass:math";
+@use './variables' as *;
+
+// ========================
+// Media Query Mixins
+// ========================
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$breakpoint-large-desktop}) {
+    @content;
+  }
+}
+
+// ========================
+// Typography & Unit Functions
+// ========================
+
+// Convert pixels to rem
+@function rem($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+// Fluid Typography Mixin (Uses clamp)
+@mixin fluid-text($min-size, $max-size, $min-vw: $breakpoint-mobile, $max-vw: $breakpoint-desktop) {
+  $min-rem: rem($min-size);
+  $max-rem: rem($max-size);
+  
+  // slope = (max_sz - min_sz) / (max_vw - min_vw)
+  // intersection = -min_vw * slope + min_sz
+  // clamp(min, intersection + slope * 100vw, max)
+  
+  // This helps enforce responsive typography dynamically
+  font-size: clamp(#{$min-rem}, 5vw, #{$max-rem});
+}

@@ -183,10 +183,10 @@ export default function HomePage() {
                         <span>GitHub</span>
                         <i className="ri-arrow-right-line" />
                       </a>
-                      <a href={SOCIAL_LINKS.instagram} target="_blank" className="social-pill hover-trigger" data-text="Instagram">
+                      {/* <a href={SOCIAL_LINKS.instagram} target="_blank" className="social-pill hover-trigger" data-text="Instagram">
                         <span>Instagram</span>
                         <i className="ri-arrow-right-line" />
-                      </a>
+                      </a> */}
                       <a href={SOCIAL_LINKS.email} className="social-pill hover-trigger" data-text="Email">
                         <span>Get in Touch</span>
                         <i className="ri-arrow-right-line" />

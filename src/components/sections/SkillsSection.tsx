@@ -74,38 +74,33 @@ export default function SkillsSection() {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="skills-container w-full mt-24 mb-24 md:mt-32 md:mb-32 relative">
-      <div className="mb-12 md:mb-16 flex justify-between items-end px-2">
-         <h2 className="text-[12px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium">Technical Arsenal</h2>
+    <div ref={containerRef} className="skills-container w-full mt-8 mb-8 md:mt-16 md:mb-16 relative px-4 md:px-8">
+      <div className="mb-8 md:mb-16 flex justify-between items-end">
+         <h2 className="text-[11px] md:text-[12px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium">Technical Arsenal</h2>
          <div className="hidden md:block text-[10px] text-[var(--text-secondary)] tracking-widest uppercase">Select Capabilities</div>
       </div>
 
       <div className="flex flex-col border-t border-[var(--border)] master-skill-border" style={{ transform: 'scaleX(0)', transformOrigin: 'left' }}>
         {SKILLS_DATA.map((item, idx) => (
-          <div key={idx} className="skill-row relative flex flex-col md:flex-row py-10 md:py-16 group">
-            <div className="md:w-1/4 mb-6 md:mb-0">
-              <h3 className="skill-title text-[13px] md:text-[14px] uppercase tracking-[0.2em] text-[var(--text)] font-semibold mt-2 opacity-0">
+          <div key={idx} className="skill-row relative flex flex-col md:flex-row py-4 md:py-6 group">
+            <div className="md:w-1/4 mb-2 md:mb-0">
+              <h3 className="skill-title text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-[var(--text)] font-semibold mt-2 opacity-0">
                 {item.category}
               </h3>
             </div>
-            <div className="md:w-3/4">
-              <p className="text-[clamp(18px,2vw,32px)] font-light leading-[1.8] tracking-wide text-[var(--text-secondary)]">
+            <div className="md:w-3/4 mt-4 md:mt-0">
+              <div className="flex flex-wrap gap-x-2 gap-y-2 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-8 text-[12px] md:text-[clamp(14px,1.2vw,18px)] font-light leading-[1.6] md:leading-[1.8] tracking-wide text-[var(--text-secondary)]">
                 {item.skills.map((skill, sIdx) => (
-                  <span key={sIdx} className="inline-block">
+                  <div key={sIdx} className="flex md:block md:text-center">
                     <span 
-                      className="skill-pill hover-trigger inline-block hover:text-[var(--text)] transition-colors duration-500 opacity-0" 
+                      className="skill-pill hover-trigger inline-block hover:text-[var(--text)] transition-colors duration-500 opacity-0 bg-[rgba(255,255,255,0.03)] border border-[var(--border)] rounded-full px-3 py-1.5 md:bg-transparent md:border-0 md:rounded-none md:px-0 md:py-0 w-max md:w-auto" 
                       data-text={skill}
                     >
                       {skill}
                     </span>
-                    {sIdx < item.skills.length - 1 && (
-                      <span className="skill-pill inline-block mx-4 md:mx-6 text-[var(--border)] text-[0.8em] align-middle transform -translate-y-1 opacity-0">
-                        —
-                      </span>
-                    )}
-                  </span>
+                  </div>
                 ))}
-              </p>
+              </div>
             </div>
             <div className="skill-border-bottom absolute bottom-0 left-0 w-full h-[1px] bg-[var(--border)]" style={{ transform: 'scaleX(0)' }} />
           </div>

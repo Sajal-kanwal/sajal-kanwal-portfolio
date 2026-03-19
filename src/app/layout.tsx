@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./tailwind.css";
+import "./globals.scss";
 import Navbar from "@/components/layout/Navbar";
 import CustomCursor from "@/components/cursor/CustomCursor";
 
@@ -31,6 +32,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -39,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -52,7 +55,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body id="content-wrapper" className="scroll-container">
+      <body id="content-wrapper" className="scroll-container" suppressHydrationWarning>
         <Navbar />
         <main id="container" role="main">
           {children}
