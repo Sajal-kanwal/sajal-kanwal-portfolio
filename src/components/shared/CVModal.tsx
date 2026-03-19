@@ -3,8 +3,9 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import dynamic from 'next/dynamic';
+import MagneticWrapper from '@/components/ui/MagneticWrapper';
 
-const PDFDocumentView = dynamic(() => import('@/components/shared/PDFDocumentView'), { 
+const PDFDocumentView = dynamic(() => import('@/components/shared/PDFDocumentView'), {  
   ssr: false, 
   loading: () => (
     <div className="flex h-[850px] items-center justify-center">
@@ -107,12 +108,12 @@ export default function CVModal() {
 
   return (
     <>
-      <li className="nav-menu-each hover-trigger" data-text="Resume">
+      <MagneticWrapper as="li" className="nav-menu-each hover-trigger" data-text="Resume">
         <button onClick={show} className="nav-link w-full text-left bg-transparent border-none cursor-none flex items-center m-0 p-0 font-inherit text-inherit">
           <i className="ri-file-text-line" />
           <span className="nav-menu mt-[2px]">Resume</span>
         </button>
-      </li>
+      </MagneticWrapper>
       {mounted && createPortal(modalContent, document.body)}
     </>
   );

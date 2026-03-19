@@ -73,6 +73,15 @@ export default function SkillsSection() {
     });
   }, { scope: containerRef });
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    const rect = target.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    target.style.setProperty('--mouse-x', `${x}px`);
+    target.style.setProperty('--mouse-y', `${y}px`);
+  };
+
   return (
     <div ref={containerRef} className="skills-container w-full mt-8 mb-8 md:mt-16 md:mb-16 relative px-4 md:px-8">
       <div className="mb-8 md:mb-16 flex justify-between items-end">
@@ -82,13 +91,23 @@ export default function SkillsSection() {
 
       <div className="flex flex-col border-t border-[var(--border)] master-skill-border" style={{ transform: 'scaleX(0)', transformOrigin: 'left' }}>
         {SKILLS_DATA.map((item, idx) => (
-          <div key={idx} className="skill-row relative flex flex-col md:flex-row py-4 md:py-6 group">
-            <div className="md:w-1/4 mb-2 md:mb-0">
+          <div 
+            key={idx} 
+            className="skill-row relative flex flex-col md:flex-row py-4 md:py-6 group md:-mx-4 md:px-4 rounded-xl overflow-hidden transition-colors"
+            onMouseMove={handleMouseMove}
+          >
+            {/* Spotlight Overlay */}
+            <div 
+              className="hidden md:block absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              style={{ background: 'radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.03), transparent 40%)' }}
+            />
+            
+            <div className="md:w-1/4 mb-2 md:mb-0 relative z-10">
               <h3 className="skill-title text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-[var(--text)] font-semibold mt-2 opacity-0">
                 {item.category}
               </h3>
             </div>
-            <div className="md:w-3/4 mt-4 md:mt-0">
+            <div className="md:w-3/4 mt-4 md:mt-0 relative z-10">
               <div className="flex flex-wrap gap-x-2 gap-y-2 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-8 text-[12px] md:text-[clamp(14px,1.2vw,18px)] font-light leading-[1.6] md:leading-[1.8] tracking-wide text-[var(--text-secondary)]">
                 {item.skills.map((skill, sIdx) => (
                   <div key={sIdx} className="flex md:block md:text-center">

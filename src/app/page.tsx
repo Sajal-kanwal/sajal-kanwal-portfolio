@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import RevealOnScroll from '@/components/shared/RevealOnScroll';
 import Footer from '@/components/layout/Footer';
+import SplitTextReveal from '@/components/animations/SplitTextReveal';
+import ProjectsReveal from '@/components/animations/ProjectsReveal';
+import MagneticWrapper from '@/components/ui/MagneticWrapper';
 import GoTopButton from '@/components/layout/GoTopButton';
 import SkillsSection from '@/components/sections/SkillsSection';
 import { CASE_STUDIES, EXPERIENCES, SOCIAL_LINKS } from '@/lib/constants';
@@ -20,8 +23,43 @@ if (typeof window !== 'undefined') {
    CASE STUDY CARD — Full Viewport with Blurred BG
 ============================ */
 function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
+  const cardRef = useRef<HTMLLIElement>(null);
+  const thumbRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+    if (!cardRef.current || !thumbRef.current) return;
+    
+    const xTo = gsap.quickTo(thumbRef.current, "x", { duration: 1, ease: "power3.out" });
+    const yTo = gsap.quickTo(thumbRef.current, "y", { duration: 1, ease: "power3.out" });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = cardRef.current!.getBoundingClientRect();
+      // Calculate normalized mouse position relative to card center
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Soft parallax strength
+      xTo(x * 0.08);
+      yTo(y * 0.08);
+    };
+
+    const handleMouseLeave = () => {
+      xTo(0);
+      yTo(0);
+    };
+
+    cardRef.current.addEventListener('mousemove', handleMouseMove);
+    cardRef.current.addEventListener('mouseleave', handleMouseLeave);
+    
+    return () => {
+      cardRef.current?.removeEventListener('mousemove', handleMouseMove);
+      cardRef.current?.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, { scope: cardRef });
+
   return (
-    <li className="cs-fullpage-slide" data-text="View Casestudy">
+    <li ref={cardRef} className="cs-fullpage-slide" data-text="View Casestudy">
       <Link href={`/${cs.slug}`} className="cs-fullpage-link">
         {/* Blurred background */}
         <div className="cs-fullpage-bg">
@@ -50,7 +88,7 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
           </div>
 
           {/* Sharp thumbnail container */}
-          <div className="cs-fullpage-thumb-container">
+          <div ref={thumbRef} className="cs-fullpage-thumb-container">
             <div className="cs-fullpage-thumb-base">
               <Image src={cs.baseImage} alt={cs.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 45vw" />
             </div>
@@ -70,27 +108,43 @@ function CaseStudyCard({ cs }: { cs: typeof CASE_STUDIES[0] }) {
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Animate case study slides on scroll
   useGSAP(() => {
-    const slides = gsap.utils.toArray('.cs-fullpage-slide');
-    if (!slides.length) return;
+    // ---- INITIAL LOAD REGAL ANIMATION ----
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-    slides.forEach((slide: any) => {
-      gsap.fromTo(slide,
-        { opacity: 0, y: 60 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: slide,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
+    // 1. Mask-reveal the giant title lines
+    tl.fromTo('.hero-title-line',
+      { y: '120%', opacity: 0, rotate: 2 },
+      { y: '0%', opacity: 1, rotate: 0, duration: 1.6, stagger: 0.15, delay: 0.1 }
+    );
+
+    // 2. Fade up description and barcode
+    tl.fromTo('.hero-anim-fade',
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, stagger: 0.15 },
+      "-=1.2"
+    );
+
+    // ---- CASE STUDY PARALLAX ON SCROLL ----
+    const slides = gsap.utils.toArray('.cs-fullpage-slide');
+    if (slides.length) {
+      slides.forEach((slide: any) => {
+        gsap.fromTo(slide,
+          { opacity: 0, y: 60 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: slide,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
           }
-        }
-      );
-    });
+        );
+      });
+    }
   }, { scope: containerRef });
 
   return (
@@ -99,13 +153,14 @@ export default function HomePage() {
         {/* HERO TOP — Full viewport with large title */}
         <div className="hero-landing">
           <div className="hero-landing-content">
-            <h1 className="hero-landing-title">
-              (©SAJAL<br />KANWAL — 2026)
+            <h1 className="hero-landing-title flex flex-col items-center">
+              <span className="overflow-hidden block leading-tight pb-2"><span className="hero-title-line block will-change-transform">(©SAJAL</span></span>
+              <span className="overflow-hidden block leading-tight"><span className="hero-title-line block will-change-transform">KANWAL — 2026)</span></span>
             </h1>
-            <p className="hero-landing-desc">
+            <p className="hero-landing-desc hero-anim-fade will-change-transform">
               I am a Full-Stack AI Engineer based in Dharamshala, building intelligent multi-agent systems and scalable real-time SaaS applications.
             </p>
-            <div className="hero-landing-barcode">
+            <div className="hero-landing-barcode hero-anim-fade will-change-transform">
               <Link href="/about" className="hover-trigger relative inline-block group" data-text="Beep Beep">
                 <svg width="120" height="40" viewBox="0 0 180 60" fill="var(--text)" xmlns="http://www.w3.org/2000/svg" className="block relative z-10 transition-colors duration-300">
                   <rect x="0" y="0" width="4" height="60" />
@@ -167,30 +222,40 @@ export default function HomePage() {
                   </RevealOnScroll>
 
                   <RevealOnScroll>
-                    <Link href="/about" className="btn-wrapper hover-trigger" data-text="Read More">
-                      <h4>Read More</h4>
-                      <i className="ri-arrow-right-line" />
-                    </Link>
+                    <MagneticWrapper>
+                      <Link href="/about" className="btn-wrapper hover-trigger" data-text="Read More">
+                        <h4>Read More</h4>
+                        <i className="ri-arrow-right-line" />
+                      </Link>
+                    </MagneticWrapper>
                   </RevealOnScroll>
 
                   <RevealOnScroll>
                     <div className="social-pills">
-                      <a href={SOCIAL_LINKS.linkedin} target="_blank" className="social-pill hover-trigger" data-text="LinkedIn">
-                        <span>LinkedIn</span>
-                        <i className="ri-arrow-right-line" />
-                      </a>
-                      <a href={SOCIAL_LINKS.github} target="_blank" className="social-pill hover-trigger" data-text="GitHub">
-                        <span>GitHub</span>
-                        <i className="ri-arrow-right-line" />
-                      </a>
-                      {/* <a href={SOCIAL_LINKS.instagram} target="_blank" className="social-pill hover-trigger" data-text="Instagram">
-                        <span>Instagram</span>
-                        <i className="ri-arrow-right-line" />
-                      </a> */}
-                      <a href={SOCIAL_LINKS.email} className="social-pill hover-trigger" data-text="Email">
-                        <span>Get in Touch</span>
-                        <i className="ri-arrow-right-line" />
-                      </a>
+                      <MagneticWrapper>
+                        <a href={SOCIAL_LINKS.linkedin} target="_blank" className="social-pill hover-trigger" data-text="LinkedIn">
+                          <span>LinkedIn</span>
+                          <i className="ri-arrow-right-line" />
+                        </a>
+                      </MagneticWrapper>
+                      <MagneticWrapper>
+                        <a href={SOCIAL_LINKS.github} target="_blank" className="social-pill hover-trigger" data-text="GitHub">
+                          <span>GitHub</span>
+                          <i className="ri-arrow-right-line" />
+                        </a>
+                      </MagneticWrapper>
+                      {/* <MagneticWrapper>
+                        <a href={SOCIAL_LINKS.instagram} target="_blank" className="social-pill hover-trigger" data-text="Instagram">
+                          <span>Instagram</span>
+                          <i className="ri-arrow-right-line" />
+                        </a>
+                      </MagneticWrapper> */}
+                      <MagneticWrapper>
+                        <a href={SOCIAL_LINKS.email} className="social-pill hover-trigger" data-text="Email">
+                          <span>Get in Touch</span>
+                          <i className="ri-arrow-right-line" />
+                        </a>
+                      </MagneticWrapper>
                     </div>
                   </RevealOnScroll>
                 </div>

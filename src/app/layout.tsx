@@ -4,28 +4,29 @@ import "./globals.scss";
 import Navbar from "@/components/layout/Navbar";
 import CustomCursor from "@/components/cursor/CustomCursor";
 
+import SmoothScrolling from "@/components/ui/SmoothScrolling";
+
 export const metadata: Metadata = {
-  title: "Sajal Kanwal — Branding Designer",
-  description: "Sajal Kanwal — I'm a branding & UX/UI designer focused on typography, systems, and thoughtful digital experiences.",
+  metadataBase: new URL("https://sajalkanwal.com"),
+  title: "Sajal Kanwal — Software Engineer",
+  description: "Sajal Kanwal — I'm a Software Engineer focused on building intelligent multi-agent systems and scalable real-time SaaS applications.",
   openGraph: {
-    title: "Sajal Kanwal – Branding & UX/UI Designer",
-    description: "Dharamshala-based designer showcasing branding & UX/UI work",
+    title: "Sajal Kanwal – Software Engineer",
+    description: "Dharamshala-based engineer showcasing multi-agent systems and SaaS applications",
     type: "website",
     images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sajal Kanwal – Designer & Developer",
-    description: "Portfolio of Sajal Kanwal. Focused on typography, systems, and thoughtful digital experiences.",
+    title: "Sajal Kanwal – Software Engineer",
+    description: "Portfolio of Sajal Kanwal. Focused on building intelligent multi-agent systems and scalable real-time SaaS applications.",
     images: ["/images/og-image.jpg"],
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+    apple: { url: "/favicon.svg", type: "image/svg+xml" },
   },
   manifest: "/manifest.json",
 };
@@ -56,11 +57,14 @@ export default function RootLayout({
         />
       </head>
       <body id="content-wrapper" className="scroll-container" suppressHydrationWarning>
-        <Navbar />
-        <main id="container" role="main">
-          {children}
-        </main>
-        <CustomCursor />
+        <div className="noise-overlay pointer-events-none fixed inset-0 z-[9999] opacity-[0.03]"></div>
+        <SmoothScrolling>
+          <Navbar />
+          <main id="container" role="main">
+            {children}
+          </main>
+          <CustomCursor />
+        </SmoothScrolling>
       </body>
     </html>
   );

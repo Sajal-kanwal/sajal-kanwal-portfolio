@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import SearchModal from '@/components/search/SearchModal';
 import CVModal from '@/components/shared/CVModal';
+import MagneticWrapper from '@/components/ui/MagneticWrapper';
 
 const navItems = [
   { label: 'Home', href: '/', icon: 'ri-home-line', page: 'home' },
@@ -41,10 +42,12 @@ export default function Navbar() {
           </div>
 
           <div className="main-nav-pc-top main-nav-call" data-text="Contact">
-            <Link href="/contact">
-              <div className="dot" />
-              <h5>Available <span>for Projects <i className="ri-arrow-right-up-line" /></span></h5>
-            </Link>
+            <MagneticWrapper>
+              <Link href="/contact">
+                <div className="dot" />
+                <h5>Available <span>for Projects <i className="ri-arrow-right-up-line" /></span></h5>
+              </Link>
+            </MagneticWrapper>
           </div>
         </div>
 
@@ -58,16 +61,20 @@ export default function Navbar() {
                   className={`nav-menu-each hover-trigger ${activePage === item.page ? 'is-active' : ''}`}
                   data-text={item.label}
                 >
-                  <Link href={item.href} className="nav-link">
-                    <i className={item.icon} />
-                    <span className="nav-menu">{item.label}</span>
-                  </Link>
+                  <MagneticWrapper>
+                    <Link href={item.href} className="nav-link block">
+                      <i className={item.icon} />
+                      <span className="nav-menu">{item.label}</span>
+                    </Link>
+                  </MagneticWrapper>
                 </li>
               ))}
               <CVModal />
             </ul>
 
-            <SearchModal />
+            <MagneticWrapper>
+              <SearchModal />
+            </MagneticWrapper>
           </div>
         </div>
       </nav>
