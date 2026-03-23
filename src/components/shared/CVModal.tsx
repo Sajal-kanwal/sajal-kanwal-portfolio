@@ -100,6 +100,7 @@ export default function CVModal() {
         className={`relative w-full h-[100vh] overflow-y-auto no-scrollbar flex justify-center items-start pt-24 pb-24 md:pt-16 transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'
         }`}
+        data-lenis-prevent="true"
       >
         <PDFDocumentView />
       </div>
