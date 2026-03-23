@@ -25,7 +25,12 @@ export default function VantagePage() {
         <RevealOnScroll>
           <div className="mb-4 md:mb-8">
             <h4 className="text-[10px] text-[var(--muted)] tracking-[0.1em] uppercase mb-2">Casestudy 04</h4>
-            <h1 className="text-[clamp(1.5rem,4vw,2.5rem)] font-light leading-[1.1] mb-2">Vantage</h1>
+            <h1 className="text-[clamp(1.5rem,4vw,2.5rem)] font-light leading-[1.1] mb-2 flex items-center gap-3">
+              Vantage
+              <a href="https://github.com/Sajal-kanwal/Vendor-Performance-Analysis" target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity duration-300 hover-trigger" data-text="View Repo">
+                <i className="ri-github-fill text-[clamp(1.2rem,3vw,2rem)]" />
+              </a>
+            </h1>
             <h3 className="text-[12px] md:text-[14px] font-normal text-[var(--text-secondary)]">AI-Driven E-commerce Data Analytics</h3>
           </div>
         </RevealOnScroll>

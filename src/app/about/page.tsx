@@ -204,7 +204,10 @@ export default function AboutPage() {
               <div className="about-details-right">
                 <h3>Oracle Cloud Infrastructure 2025</h3>
                 <li>
-                  <h4>Certified Developer Professional</h4>
+                  <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=24B6EEDC87B3DE0A9A6F571F80A4EFA673B015501A9C507F9F1198EB0E27D2BB" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 w-fit cursor-none hover-trigger" data-text="Verify">
+                    <h4 className="group-hover:text-[var(--text)] transition-colors duration-300">Certified Developer Professional</h4>
+                    <i className="ri-external-link-line text-[16px] md:text-[18px] opacity-40 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2" />
+                  </a>
                   <div className="about-each-detail-content">
                     <h5>Oracle</h5>
                     <h6>2025 November</h6>
@@ -219,7 +222,21 @@ export default function AboutPage() {
               <div className="about-details-right">
                 <h3>Oracle Cloud Infrastructure 2025</h3>
                 <li>
-                  <h4>Certified Generative AI Professional &amp; AI Foundations</h4>
+                  <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=CC0A083BB7FACCD92C6EAB833B7C57D89C9682E1CBA3731039652EF707B66611" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 w-fit cursor-none hover-trigger" data-text="Verify">
+                    <h4 className="group-hover:text-[var(--text)] transition-colors duration-300">Certified Generative AI Professional</h4>
+                    <i className="ri-external-link-line text-[16px] md:text-[18px] opacity-40 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2" />
+                  </a>
+                  <div className="about-each-detail-content">
+                    <h5>Oracle</h5>
+                    <h6>2025 October</h6>
+                  </div>
+                </li>
+                
+                <li className="mt-8 md:mt-12">
+                  <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=6202688841B06EDEA270F3814B2DA92FA06B01ADE2E41DD8035849A9476FFF1E" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 w-fit cursor-none hover-trigger" data-text="Verify">
+                    <h4 className="group-hover:text-[var(--text)] transition-colors duration-300">Certified AI Foundations Associate</h4>
+                    <i className="ri-external-link-line text-[16px] md:text-[18px] opacity-40 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2" />
+                  </a>
                   <div className="about-each-detail-content">
                     <h5>Oracle</h5>
                     <h6>2025 October</h6>
