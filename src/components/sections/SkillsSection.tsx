@@ -9,17 +9,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SKILLS_DATA = [
   {
-    category: 'AI Engineering',
-    skills: ['Generative AI', 'LangChain & LlamaIndex', 'OpenAI / Anthropic APIs', 'PyTorch Ecosystem', 'HuggingFace', 'Pinecone Vector DB'],
+    category: 'AI & Systems',
+    skills: ['LLMs & Multi-Agent Systems', 'Zero-Waste RAG', 'pgvector & Vector Search', 'Pydantic AI & LangChain', 'Gemini & OpenAI APIs', 'Semantic Code Search'],
   },
   {
-    category: 'Frontend UI',
-    skills: ['Next.js 14/15', 'React.js Architecture', 'TypeScript (Strict)', 'TailwindCSS', 'GSAP & Framer Motion', 'WebSockets / Real-Time'],
+    category: 'Cloud & Data Engineering',
+    skills: ['Snowflake & dbt Core', 'PostgreSQL & Star Schemas', 'AWS S3 & Cloud Stages', 'Medallion Pipelines', 'SCD Type 2 Historization', 'Redis & BullMQ Queues'],
   },
   {
-    category: 'Backend & Cloud',
-    skills: ['Node.js Runtime', 'Python (FastAPI)', 'PostgreSQL / Prisma', 'Redis Caching', 'Docker Containerization', 'AWS Infrastructure'],
-  }
+    category: 'Full-Stack & Backend',
+    skills: ['Next.js 16 & React 19', 'TypeScript (Strict)', 'NestJS & FastAPI', 'Prisma ORM & T-SQL', 'Docker & CI/CD', 'tRPC & Server Actions'],
+  },
+  {
+    category: 'Analytics & Modeling',
+    skills: ['Inferential Statistics', 'Hypothesis Testing (KS/JB)', 'Monte Carlo Simulations', 'Feature Engineering', 'Recharts & Tableau', 'Pandas & SciPy.stats'],
+  },
 ];
 
 export default function SkillsSection() {

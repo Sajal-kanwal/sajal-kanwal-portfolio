@@ -1,27 +1,26 @@
 'use client';
 
-import { Document, Page, pdfjs } from 'react-pdf';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import { useState } from 'react';
 
 export default function PDFDocumentView() {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <Document 
-      file="/CV.pdf" 
-      loading={
-        <div className="flex h-[850px] items-center justify-center">
-          <span className="text-white/50 text-[12px] uppercase tracking-[0.2em] font-medium">Rendering PDF Document...</span>
+    <div className="relative w-full h-full min-h-[600px] md:min-h-[750px] max-w-4xl mx-auto rounded-xl overflow-hidden bg-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)] flex flex-col">
+      {loading && (
+        <div className="absolute inset-0 bg-[#0c1017] flex items-center justify-center z-10">
+          <span className="text-white/60 text-[12px] uppercase tracking-[0.2em] font-medium animate-pulse">
+            Loading Resume...
+          </span>
         </div>
-      }
-      className="flex flex-col shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)] rounded-xl overflow-hidden"
-    >
-      <Page 
-        pageNumber={1} 
-        renderTextLayer={false} 
-        renderAnnotationLayer={false}
-        width={typeof window !== 'undefined' ? (window.innerWidth < 768 ? window.innerWidth * 0.9 : 850) : 850}
-        className="rounded-xl overflow-hidden bg-white"
+      )}
+      <iframe
+        src="/CV.pdf#toolbar=1&navpanes=0&scrollbar=1"
+        className="w-full h-full min-h-[650px] md:min-h-[800px] border-none rounded-xl bg-white"
+        title="Sajal Kanwal Resume"
+        onLoad={() => setLoading(false)}
       />
-    </Document>
+    </div>
   );
 }
+

@@ -123,40 +123,17 @@ export default function AboutPage() {
           <ul>
             <RevealOnScroll>
               <div className="about-details-right">
-                <h3>Repo Lens</h3>
+                <h3>Monocle</h3>
                 <ul>
                   <li>
-                    <h4>AI-Powered GitHub Collaboration SaaS</h4>
+                    <h4>AI-Powered GitHub Intelligence &amp; Codebase RAG</h4>
                     <div className="about-each-detail-content">
                       <h5>Independent Project</h5>
                       <h6>2026 March</h6>
                     </div>
                   </li>
                   <li>
-                    <h4 className="italic">Stack — Next.js 15, PostgreSQL, LangChain, tRPC</h4>
-                    <div className="about-each-detail-content">
-                      <h6>Full-Stack</h6>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll><div className="line" /></RevealOnScroll>
-
-            <RevealOnScroll>
-              <div className="about-details-right">
-                <h3>Sentinel</h3>
-                <ul>
-                  <li>
-                    <h4>Autonomous AI Content Intelligence System</h4>
-                    <div className="about-each-detail-content">
-                      <h5>Independent Project</h5>
-                      <h6>2026 January</h6>
-                    </div>
-                  </li>
-                  <li>
-                    <h4 className="italic">Stack — Python, OpenAI API, Docker, PostgreSQL</h4>
+                    <h4 className="italic">Stack — Next.js 16, Neon pgvector, Gemini 2.5 Flash, BullMQ, tRPC</h4>
                     <div className="about-each-detail-content">
                       <h6>AI Engineering</h6>
                     </div>
@@ -169,20 +146,68 @@ export default function AboutPage() {
 
             <RevealOnScroll>
               <div className="about-details-right">
-                <h3>Spendora</h3>
-                <li>
-                  <h4>Real-Time Financial Telemetry Dashboard</h4>
-                  <div className="about-each-detail-content">
-                    <h5>Independent Project</h5>
-                    <h6>2025 July</h6>
-                  </div>
-                </li>
-                <li>
-                  <h4 className="italic">Stack — Next.js 14, PostgreSQL, Prisma, Clerk, Zod</h4>
-                  <div className="about-each-detail-content">
-                    <h6>Full-Stack</h6>
-                  </div>
-                </li>
+                <h3>Solidius</h3>
+                <ul>
+                  <li>
+                    <h4>Double-Entry Ledger &amp; Wallet Engine</h4>
+                    <div className="about-each-detail-content">
+                      <h5>Independent Project</h5>
+                      <h6>2026 February</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <h4 className="italic">Stack — NestJS, PostgreSQL 18, Prisma, Outbox Workers, Argon2id</h4>
+                    <div className="about-each-detail-content">
+                      <h6>Backend Systems</h6>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll><div className="line" /></RevealOnScroll>
+
+            <RevealOnScroll>
+              <div className="about-details-right">
+                <h3>Loom</h3>
+                <ul>
+                  <li>
+                    <h4>Grounded RAG Over SEC Filings</h4>
+                    <div className="about-each-detail-content">
+                      <h5>Independent Project</h5>
+                      <h6>2026 January</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <h4 className="italic">Stack — FastAPI, React 19, Supabase pgvector, Pydantic AI, OpenAI</h4>
+                    <div className="about-each-detail-content">
+                      <h6>Applied AI</h6>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll><div className="line" /></RevealOnScroll>
+
+            <RevealOnScroll>
+              <div className="about-details-right">
+                <h3>Airbnb Snowflake &amp; dbt</h3>
+                <ul>
+                  <li>
+                    <h4>Cloud-Native Medallion Data Engineering Pipeline</h4>
+                    <div className="about-each-detail-content">
+                      <h5>Independent Project</h5>
+                      <h6>2025 November</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <h4 className="italic">Stack — Snowflake, dbt Core, AWS S3, Jinja, SCD Type 2</h4>
+                    <div className="about-each-detail-content">
+                      <h6>Data Engineering</h6>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </RevealOnScroll>
           </ul>

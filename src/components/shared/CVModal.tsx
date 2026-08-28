@@ -97,8 +97,8 @@ export default function CVModal() {
 
       {/* Unbound PDF Document Container */}
       <div 
-        className={`relative w-full h-[100vh] overflow-y-auto no-scrollbar flex justify-center items-start pt-24 pb-24 md:pt-16 transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isOpen ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'
+        className={`relative w-full max-w-5xl h-[86vh] mx-4 my-auto flex justify-center items-center rounded-2xl overflow-hidden z-20 shadow-2xl transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isOpen ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
         }`}
         data-lenis-prevent="true"
       >

@@ -1,3 +1,18 @@
+export interface Capability {
+  title: string;
+  body: string;
+}
+
+export interface StackItem {
+  name: string;
+  role: string;
+}
+
+export interface Metric {
+  value: string;
+  label: string;
+}
+
 export interface CaseStudy {
   number: string;
   title: string;
@@ -6,6 +21,19 @@ export interface CaseStudy {
   slug: string;
   baseImage: string;
   hoverImage: string;
+  /* --- detail page --- */
+  domain: string;
+  year: string;
+  headline: string;
+  headlineAccent: string;
+  overview: string;
+  capabilities: Capability[];
+  stack: StackItem[];
+  metrics: Metric[];
+  decisions: Capability[];
+  repoUrl?: string;
+  liveUrl?: string;
+  aliases?: string[];
 }
 
 export interface ArchiveItem {
